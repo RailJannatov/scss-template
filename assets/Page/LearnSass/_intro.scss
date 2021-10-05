@@ -1,0 +1,13 @@
+$intro-bg-color: #f8f9fa;
+
+#intro {
+    background: url(/assets/image/download.svg);
+    background-color: $intro-bg-color;
+    padding-top: $base*41;
+    height: $base*75;
+
+    .intro-title {
+        @extend %title-style;
+
+    }
+}

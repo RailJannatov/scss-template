@@ -1,0 +1,46 @@
+$input-color:#dadbdf;
+$link-bg-color:rgba(218, 219, 223, 0.25);
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .nav-logo {
+        margin: $margin-20 $margin-20*2;
+
+        img {
+            width: $base*32;
+            height: $base*24;
+        }
+    }
+
+    .nav-tabs {
+        list-style-type: none;
+        border: 0;
+        margin-top: $base*10;
+    }
+
+    .list-item {
+        display: inline-block;
+        margin-right: $base*9;
+
+        a {
+            color: $link-color;
+            text-decoration: none;
+            padding: $base;
+
+            &:hover {
+                background: $link-bg-color;
+            }
+        }
+    }
+
+    input {
+        margin-right: $margin-20*2;
+        border: $base/2 solid $input-color;
+        border-radius: $base;
+        padding: $base/2 $base*4;
+    }
+}

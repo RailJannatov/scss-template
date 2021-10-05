@@ -1,0 +1,43 @@
+#nesting {
+    padding: $padding-20*2 $padding-20*12;
+
+    h2 {
+        @extend %title-style;
+        font-size: $base*8;
+        font-weight: 400;
+        margin-top: $base*12;
+        margin-bottom: $margin-20 +4;
+    }
+
+    p {
+        font-size: $base*4+2;
+        margin-bottom: $margin-20+11;
+        color: $main-color;
+
+    }
+
+    .scss-head {
+        color: $main-color;
+    }
+
+    .sass-head {
+        color: $sass-head-color;
+    }
+
+    .scss-code {
+        @extend %scss-code-style;
+        margin-bottom: $base*5;
+    }
+
+    .last-paragraph {
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: $main-color;
+            margin-top: $margin-20*3;
+
+        }
+    }
+}

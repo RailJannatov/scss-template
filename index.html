@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="d-flex justify-content-between">
+            <div class="nav-logo">
+                <a href=""> <img src="./assets/image/logo-b6e1ef6e.svg" alt="page logo"></a>
+            </div>
+            <div class="nav-list">
+                <ul class="nav-tabs">
+                    <li class="list-item"><a href="#">Install</a> </li>
+                    <li class="list-item"><a href="#">Learn Sass</a> </li>
+                    <li class="list-item"><a href="#">Blog</a> </li>
+                    <li class="list-item"><a href="#">Documentation</a> </li>
+                    <li class="list-item">
+                        <a href="#">Get involved</a></li>
+                    <input type="text" placeholder="Search">
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- intro start -->
+        <section id="intro">
+            <div class="container">
+                <h1 class="intro-title text-center">Sass Basics</h1>
+            </div>
+        </section>
+        <!-- intro end -->
+        <!-- preprocessing start -->
+        <section id="preprocessing">
+            <div class="container">
+                <p class="pre-head">Before you can use Sass, you need to set it up on your project. If you want to just
+                    browse here, go
+                    ahead, but we recommend you go install Sass first. <a href="#">Go here</a> if you want to learn how
+                    to
+                    get everything
+                    set up.</p>
+                <h2>Preprocessing</h2>
+                <p>CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain.
+                    This is where a preprocessor can help. Sass has features that don't exist in CSS yet like nesting,
+                    mixins, inheritance, and other nifty goodies that help you write robust, maintainable CSS.</p>
+                <p>Once you start tinkering with Sass, it will take your preprocessed Sass file and save it as a normal
+                    CSS file that you can use in your website.</p>
+                <p>The most direct way to make this happen is in your terminal. Once Sass is installed, you can compile
+                    your Sass to CSS using the sass command. You'll need to tell Sass which file to build from, and
+                    where to output CSS to. For example, running sass input.scss output.css from your terminal would
+                    take a single Sass file, input.scss, and compile that file to output.css.</p>
+                <p>You can also watch individual files or directories with the --watch flag. The watch flag tells Sass
+                    to watch your source files for changes, and re-compile CSS each time you save your Sass. If you
+                    wanted to watch (instead of manually build) your input.scss file, you'd just add the watch flag to
+                    your command, like so:</p>
+                <div class="sass-code">
+                    sass --watch input.scss output.css
+                </div>
+                <p>You can watch and output to directories by using folder paths as your input and output, and
+                    separating them with a colon. In this example:</p>
+                <div class="sass-code">
+                    sass --watch app/sass:public/stylesheets
+                </div>
+                <p class="last-paragraph">Sass would watch all files in the app/sass folder for changes, and compile CSS
+                    to the
+                    public/stylesheets folder.
+                </p>
+
+            </div>
+        </section>
+        <!-- preprocessing end -->
+        <!-- variables start -->
+        <section id="variables">
+            <div class="container">
+                <h2>Variables</h2>
+                <p>Think of variables as a way to store information that you want to reuse throughout your stylesheet.
+                    You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass
+                    uses the $ symbol to make something a variable. Here's an example:</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <span class="scss-head">SCSS</span>
+                        <span class="sass-head">Sass</span>
+                        <div class="scss-code">
+                            <span>$font-stack</span>
+                            <span>: Helvetica, </span>
+                            <span>sans-serif;</span>
+                            <span class="primary-in-scss">$primary-color: #333;</span>
+                            <span>body{</span>
+                            <span class="font-in-scss">font: 100% $font-stack;</span>
+                            <span class="color-in-scss"> color: $primary-color;</span>
+                            <span class="bracket-in-scss">}</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <span>CSS</span>
+                        <div class="scss-code">
+
+
+
+                            <span>body{</span>
+                            <span class="font-in-scss">font: 100% Helvetica, sans-serif;
+                            </span>
+                            <span class="color-in-scsss"> color: #333;</span>
+
+                            <span class="bracket-in-scss">}</span>
+                        </div>
+                    </div>
+                    <p class="last-paragraph">When the Sass is processed, it takes the variables we define for the
+                        $font-stack and
+                        $primary-color and outputs normal CSS with our variable values placed in the CSS. This can be
+                        extremely powerful when working with brand colors and keeping them consistent throughout the
+                        site.</p>
+                </div>
+            </div>
+        </section>
+        <!-- variables end -->
+        <section id="nesting">
+            <div class="container">
+                <h2>Nesting</h2>
+                <p>When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on
+                    the other hand, doesn't.</p>
+                <p>Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your
+                    HTML. Be aware that overly nested rules will result in over-qualified CSS that could prove hard to
+                    maintain and is generally considered bad practice.</p>
+                <p>With that in mind, here's an example of some typical styles for a site's navigation:</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <span class="scss-head">SCSS</span>
+                        <span class="sass-head">Sass</span>
+                        <div class="scss-code">
+                            <span class="nav-text">nav {</span>
+                            <span class="ul-text"> ul {</span>
+                            <span>margin: 0;</span>
+                            <span class="primary-in-scss">$primary-color: #333;</span>
+                            <span>body{</span>
+                            <span class="font-in-scss">font: 100% $font-stack;</span>
+                            <span class="color-in-scss"> color: $primary-color;</span>
+                            <span class="bracket-in-scss">}</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <span>CSS</span>
+                        <div class="scss-code">
+                            <span>body{</span>
+                            <span class="font-in-scss">font: 100% Helvetica, sans-serif;
+                            </span>
+                            <span class="color-in-scsss"> color: #333;</span>
+
+                            <span class="bracket-in-scss">}</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="last-paragraph">When the Sass is processed, it takes the variables we define for the
+                    $font-stack and
+                    $primary-color and outputs normal CSS with our variable values placed in the CSS. This can
+                    be
+                    extremely powerful when working with brand colors and keeping them consistent throughout
+                    the
+                    site.</p>
+
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

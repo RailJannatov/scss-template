@@ -1,0 +1,14 @@
+$scss-code-bg-color:rgb(192, 191, 191);
+
+%title-style {
+    font-size: $font-20*4;
+    color: $main-color;
+    font-weight: $main-weight;
+}
+
+%scss-code-style {
+    width: 100%;
+    padding: $base*2.5;
+    background-color: $scss-code-bg-color;
+    height: $base*45;
+}

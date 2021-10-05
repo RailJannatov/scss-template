@@ -1,0 +1,57 @@
+$border-color:rgb(235, 235, 235);
+$info-code-bg-color:rgba(0, 51, 102, 0.0625);
+
+#preprocessing {
+    padding: $padding-20*2 $padding-20*12;
+
+
+
+    .pre-head {
+        @extend %title-style;
+        font-size: $base*7;
+
+        a {
+            color: $link-color;
+        }
+    }
+
+    h2 {
+        @extend %title-style;
+        font-size: $base*8;
+        font-weight: 400;
+        margin-top: $base*12;
+        margin-bottom: $margin-20 +4;
+    }
+
+    p {
+        font-size: $base*4+2;
+        margin-bottom: $margin-20+11;
+        color: $main-color;
+
+
+
+    }
+
+    .sass-code {
+        width: $base*250;
+        height: $base*12;
+        border: 1px solid $border-color;
+        background-color: $info-code-bg-color;
+        padding: $base*2.5 $base*4;
+        margin-bottom: $margin-20;
+    }
+
+    .last-paragraph {
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: $main-color;
+            margin-top: $margin-20*3;
+
+        }
+    }
+
+
+}

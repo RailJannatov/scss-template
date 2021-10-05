@@ -1,0 +1,60 @@
+#variables {
+    padding: $padding-20*2 $padding-20*12;
+
+    h2 {
+        @extend %title-style;
+        font-size: $base*8;
+        font-weight: 400;
+        margin-top: $base*12;
+        margin-bottom: $margin-20 +4;
+    }
+
+    p {
+        font-size: $base*4+2;
+        margin-bottom: $margin-20+11;
+        color: $main-color;
+
+    }
+
+    .scss-head {
+        color: $main-color;
+    }
+
+    .sass-head {
+        color: $sass-head-color;
+    }
+
+    .scss-code {
+        @extend %scss-code-style;
+    }
+
+    .primary-in-scss {
+        display: block;
+    }
+
+    .font-in-scss {
+        color: $sass-head-color;
+        display: block;
+    }
+
+    .color-in-scss {
+        color: $sass-head-color;
+    }
+
+    .bracket-in-scss {
+        display: block;
+    }
+
+    .last-paragraph {
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: $main-color;
+            margin-top: $margin-20*3;
+
+        }
+    }
+
+}
